@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html.twig' %}
+
+{# (commentaire caché) le titre de l'onglet #}
+{% block title %} 
+    Question: {{ question }} 
+{% endblock %}
+
+{% block body %}
+
+    <h1> {{ question }} </h1>
+    {# (commentaire caché) on aurait pu mettre à la place de {{ question }} un {% for ou if... %} #}
+
+    <div> la première question ici </div>
+
+    <h2> Answers ({{ answers|length }})</h2>
+
+    <ul>
+        {% for answer in answers %} 
+            <li> {{ answer }} </li>
+        {% endfor %} 
+    </ul>
+
+{% endblock %}

@@ -45,6 +45,9 @@ class FirstController extends AbstractController
             'réponse 3',       
         ];
 
+        //comme var dump, ouvrir l'onglet debug dans le profiler pour lire les détails
+        dump($this);
+
         //uniquement possible car extends Abstract Controller "nommer par le nom du controller ici "first"
         //puis on crée un dossier dans templates-> first/show.html.twig dans lequel on définit ce qu'on veut
         return $this->render('first/show.html.twig' , [
