@@ -2,13 +2,16 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
     //création de la classe du controller pour la route qu'on a défini dans config/routes.yaml
     //   => controller: App\Controller\FirstController::homepage
 
-class FirstController
+//extends Abstract Controller nous permet d'utiliser un template
+// penser à rajouter l'appel en haut du fichier: use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+class FirstController extends AbstractController 
 {
     /**
      * @Route ("/")
@@ -35,6 +38,12 @@ class FirstController
      */
     public function showAgain($slug)
     {
+        //uniquement possible car extends Abstract Controller "nommer par le nom du controller ici "first"
+        //puis on crée un dossier dans templates-> first/show.html.twig dans lequel on définit ce qu'on veut
+        return $this->render('first/show.html.twig' , [
+            'toto' => ucwords(str_replace("-", " ", $slug))
+        ]);
+        
         return new Response(sprintf(
             'Future page to show the question "%s"!', 
             str_replace("-", " ", $slug) 
