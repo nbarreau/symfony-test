@@ -19,7 +19,8 @@ class FirstController extends AbstractController
      */
     public function homepage()
     {
-        return new Response('Hello');
+        // OLD return new Response('Hello');
+        return $this->render('first/homepage.html.twig');
     }
 
     /**
