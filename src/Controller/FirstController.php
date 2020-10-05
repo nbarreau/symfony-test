@@ -38,10 +38,18 @@ class FirstController extends AbstractController
      */
     public function showAgain($slug)
     {
+
+        $answers = [
+            'réponse 1',
+            'réponse 2',
+            'réponse 3',       
+        ];
+
         //uniquement possible car extends Abstract Controller "nommer par le nom du controller ici "first"
         //puis on crée un dossier dans templates-> first/show.html.twig dans lequel on définit ce qu'on veut
         return $this->render('first/show.html.twig' , [
-            'toto' => ucwords(str_replace("-", " ", $slug))
+            'question' => ucwords(str_replace("-", " ", $slug)),
+            'answers' => $answers,
         ]);
         
         return new Response(sprintf(
