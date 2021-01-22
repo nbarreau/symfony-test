@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class FirstController extends AbstractController 
 {
     /**
-     * @Route ("/")
+     * @Route ("/", name="app_homepage")
      * la route va correspondre à l'url
      */
     public function homepage()
@@ -24,7 +24,7 @@ class FirstController extends AbstractController
     }
 
     /**
-     * @Route ("/question/comment-faire-une-autre-page-avec-annotations")
+     * @Route ("/question/{slug}", name="app_question_show")
      */
     public function show()
     {
