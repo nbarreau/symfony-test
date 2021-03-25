@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
+
     //création de la classe du controller pour la route qu'on a défini dans config/routes.yaml
     //   => controller: App\Controller\FirstController::homepage
 
@@ -42,7 +43,7 @@ class FirstController extends AbstractController
     }
 
     /**
-     * @Route ("/questions/{slug}")
+     * @Route ("/questions/{slug}", name="app_question_showAgain")
      * la même chose que la page d'avant sauf qu'on remplace la question par une 'carte' -> {ici slug} pour que quoi qu'on rentre dans l'url ça l'affiche
      * par exemple je mets dans l'url : https://localhost:8000/questions/any-question-to-ask
      * la page affichera: Future page to show the question "any question to ask"!
