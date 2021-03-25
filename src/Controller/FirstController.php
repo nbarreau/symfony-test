@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Twig\Environment;
 
     //création de la classe du controller pour la route qu'on a défini dans config/routes.yaml
     //   => controller: App\Controller\FirstController::homepage
@@ -17,10 +18,19 @@ class FirstController extends AbstractController
      * @Route ("/", name="app_homepage")
      * la route va correspondre à l'url
      */
-    public function homepage()
+    public function homepage(Environment $twigEnvironment)
     {
         // OLD return new Response('Hello');
-        return $this->render('first/homepage.html.twig');
+
+        //solution sans utliliser Twig Environement (1)
+        // (1) pour voir les differents services (objets) dispo taper dans console:  php bin/console debug:autowiring twig 
+        return $this->render('first/homepage.html.twig');  
+        
+        /*
+        //solution avec Twig Environment donne exactement la même chose
+        $html = $twigEnvironment->render('first/homepage.html.twig');
+        return new Response($html);
+        */
     }
 
     /**
