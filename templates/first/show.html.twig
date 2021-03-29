@@ -58,7 +58,6 @@
 </div>
 {% endblock %}
 
-
 {% block javascripts %}
     {{ parent() }} //permet de ne pas overwrite le script javascript inclus dans le fichier base.html.twig il reprend le code parent grâce à cette instruction
     <script src="{{ asset('js/question_show.js') }}"></script>
