@@ -11,6 +11,9 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 
+//ne fonctionne pas ???
+//import $ from 'jquery'; 
+
 /**
  * Simple (ugly) code to handle the comment vote up/down
  */
